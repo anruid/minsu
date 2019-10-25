@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="js/jquery-3.4.1.js"></script>
+    <!-- Ajax使用JQuery -->
+    <!-- <script src="js/jquery-3.4.1.js"></script> -->
     <style>
     *{
         margin:0;
@@ -119,20 +120,22 @@
                
                window.onscroll = function(){
                    if(window.pageYOffset+window.innerHeight>items[items.length-1].offsetTop){
-                       getData();
-                       
-       
-                   }
-               }
-               function getData(){
-                $.ajax({
-                       type:'get',
-                       url:'./waterFall.php',
-                       data:{username:123},
-                       dataType:'json',
-                       success:function(data){
-                           var data = eval(data)
-                        //    console.log(data[0].src);
+                    //    getData();
+
+                    // Ajax调用前注释以下代码
+                       var data = [{src:"img/12.png"},
+    {src:"img/11.png"},
+    {src:"img/1.png"},
+    {src:"img/14.png"},
+    {src:"img/5.png"},
+    {src:"img/13.png"},
+    {src:"img/4.png"},
+    {src:"img/7.png"},
+    {src:"img/6.png"},
+    {src:"img/3.png"},
+    {src:"img/2.png"},
+    {src:"img/9.png"},
+    {src:"img/8.png"}];
                        for(var i= 0; i<data.length;i++){
                            var div = document.createElement('div');
                            div.className = 'item';
@@ -142,9 +145,34 @@
                            itemBox.appendChild(div);
                        }
                        waterFall();
-                 }
-             });
-           }
+                       
+                       // Ajax调用前注释以上代码
+                   }
+               }
+
+            //    Ajax方式调用
+
+        //        function getData(){
+        //         $.ajax({
+        //                type:'get',
+        //                url:'./waterFall.php',
+        //                data:{username:123},
+        //                dataType:'json',
+        //                success:function(data){
+        //                    var data = eval(data)
+        //                 //    console.log(data[0].src);
+        //                for(var i= 0; i<data.length;i++){
+        //                    var div = document.createElement('div');
+        //                    div.className = 'item';
+        //                    var img = document.createElement('img');
+        //                    img.src = data[i].src;
+        //                    div.appendChild(img);
+        //                    itemBox.appendChild(div);
+        //                }
+        //                waterFall();
+        //          }
+        //      });
+        //    }
           
         }
                
