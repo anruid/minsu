@@ -1,8 +1,8 @@
 <?php
-$cb= $_GET['callback'];
+// $cb= $_GET['callback'];
 $uname = $_GET['username'];
 if($uname == '123'){
-    echo $cb.'('.'[{src:"img/12.png"},
+    echo json_encode('[{src:"img/12.png"},
     {src:"img/11.png"},
     {src:"img/1.png"},
     {src:"img/14.png"},
@@ -14,7 +14,7 @@ if($uname == '123'){
     {src:"img/3.png"},
     {src:"img/2.png"},
     {src:"img/9.png"},
-    {src:"img/8.png"}]'.')';
+    {src:"img/8.png"}]');
 }else{
     echo $cb.'('."'hello'".')';
 }

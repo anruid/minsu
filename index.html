@@ -22,6 +22,11 @@
         padding: 2px;
         border:1px solid #ccc;
         position:absolute;
+        width:18%;
+    }
+
+    img{
+        width:100%;
     }
     </style>
 
@@ -122,11 +127,12 @@
                function getData(){
                 $.ajax({
                        type:'get',
-                       url:'http://github.com/anruid/minsu/waterFall.php',
+                       url:'./waterFall.php',
                        data:{username:123},
-                       dataType:'jsonp',
+                       dataType:'json',
                        success:function(data){
-                           
+                           var data = eval(data)
+                        //    console.log(data[0].src);
                        for(var i= 0; i<data.length;i++){
                            var div = document.createElement('div');
                            div.className = 'item';
